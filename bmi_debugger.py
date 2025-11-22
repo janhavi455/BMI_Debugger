@@ -3,7 +3,7 @@
 # 2.label_BMI
 # 3.categorize_BMI
 
-def calculate_BMI(height,weight):
+def calculate_BMI(weight,height):
     """
     Calculate BMI given weight (kg) and height (meters)
 
@@ -37,7 +37,7 @@ def label_BMI(bmi):
         return "High"
     return "Normal"
 
-def categorize_BMI(height, weight):
+def categorize_BMI(weight, height):
     """
     Main function which Categorizes BMI 
 
@@ -48,18 +48,18 @@ def categorize_BMI(height, weight):
     Returns:
     str: BMI category
     """
-    bmi= calculate_BMI(height, weight)
+    bmi= calculate_BMI(weight,height)
     bmi_category= label_BMI(bmi)
     return bmi_category
 
 #Example
 if __name__=="__main__":
     samples= [
-        (70, 1.75),
-        (80,1.6),
-        (50,1.5),
-        (0,1.7),
-        (70,0)
+        (70, 1.75), #Normal
+        (80,1.6), #High
+        (50,1.5),#Normal
+        (0,1.7),#0
+        (70,0)#error
     ]
     for w,h in samples:
         try:
